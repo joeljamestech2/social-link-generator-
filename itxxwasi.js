@@ -9,10 +9,10 @@ require('events').EventEmitter.defaultMaxListeners = 500;
 app.use('/wasiqr', server);
 app.use('/code', code);
 app.use('/whats',async (req, res, next) => {
-res.sendFile(__path + '/Whatsapp.html')
+res.sendFile(__path + '/joel/Whatsapp.html')
 })
 app.use('/facebook',async (req, res, next) => {
-res.sendFile(__path + '/facebook.html')
+res.sendFile(__path + '/joel/facebook.html')
 })
 app.use('/',async (req, res, next) => {
 res.sendFile(__path + '/joelpage.html')
