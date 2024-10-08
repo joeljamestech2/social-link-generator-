@@ -3,10 +3,10 @@ const app = express();
 __path = process.cwd()
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 8000;
-let server = require('./wasiqr'),
+let server = require('./joel'),
     code = require('./pair');
 require('events').EventEmitter.defaultMaxListeners = 500;
-app.use('/wasiqr', server);
+app.use('/joel', server);
 app.use('/code', code);
 app.use('/whats',async (req, res, next) => {
 res.sendFile(__path + '/joel/Whatsapp.html')
