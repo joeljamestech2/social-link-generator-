@@ -31,7 +31,7 @@
 
 
 <a
-      href='https://joel-c1359332ee25.herokuapp.com/' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-HEROKU-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
+      href='https://github.com/joeljamestech2/social-link-generator-' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-HEROKU-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
 
 
 
@@ -47,7 +47,10 @@
 
 
 <a
-      href='https://joel-c1359332ee25.herokuapp.com/' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-REPLIT-purple?style=for-the-badge&logo=replit&logoColor=yellow'/></a>
+      href='https://replit.com/' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-REPLIT-purple?style=for-the-badge&logo=replit&logoColor=yellow'/></a>
+
+
+
 
 
 
@@ -61,5 +64,5 @@
 
 
  <a
-      href='https://joel-c1359332ee25.herokuapp.com/' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-RENDER-purple?style=for-the-badge&logo=render&logoColor=black'/></a>
+      href='https://dashboard.render.com/select-repo?type=web' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-RENDER-purple?style=for-the-badge&logo=render&logoColor=black'/></a>
       
