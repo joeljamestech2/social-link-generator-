@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Link Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+        input[type="text"], textarea {
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: calc(100% - 24px);
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:hover, textarea:hover {
+            border-color: #c13584; /* Instagram purple color */
+            box-shadow: 0 0 5px rgba(193, 53, 132, 0.5);
+        }
+        input[type="text"]:focus, textarea:focus {
+            border-color: #c13584; /* Instagram purple color */
+            outline: none;
+            box-shadow: 0 0 5px rgba(193, 53, 132, 0.5);
+        }
+        input[type="submit"] {
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #c13584; /* Instagram purple color */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #e1306c; /* Darker purple for hover */
+        }
+        .result {
+            margin-top: 20px;
+            position: relative;
+        }
+        .result input[type="text"] {
+            background-color: #f0f0f0;
+            cursor: not-allowed;
+            padding-right: 80px; /* Space for copy button */
+        }
+        .copy-btn {
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+            color: #c13584; /* Instagram purple color */
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .result:hover .copy-btn {
+            display: block;
+        }
+        .copy-btn:hover {
+            background-color: #e1e8ed; /* Light grey for hover */
+            color: #c13584; /* Instagram purple color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Link Generator</h1>
+        <form id="linkForm">
+            <label for="username">Enter Instagram username:</label>
+            <input type="text" id="username" name="username" placeholder="username">
+            <label for="message">Enter your message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Hello, I'd love to connect!"></textarea>
+            <input type="submit" value="Generate Link">
+        </form>
+        <div class="result" id="result">
+            <input type="text" id="instagramLink" disabled readonly>
+            <button class="copy-btn" id="copyBtn">Copy Link</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('linkForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get the Instagram username and message from the input fields
+            var username = document.getElementById('username').value.trim();
+            var message = document.getElementById('message').value.trim();
+
+            // Encode the message for URL
+            var encodedMessage = encodeURIComponent(message);
+
+            // Generate the Instagram DM link
+            var instagramLink = 'https://www.instagram.com/direct/new/?username=' + encodeURIComponent(username) + '&text=' + encodedMessage;
+
+            // Display the link in the disabled input field
+            var instagramLinkInput = document.getElementById('instagramLink');
+            instagramLinkInput.value = instagramLink;
+        });
+
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            var instagramLinkInput = document.getElementById('instagramLink');
+            
+            // Use Clipboard API to copy text
+            navigator.clipboard.writeText(instagramLinkInput.value).then(function() {
+                alert('Link copied to clipboard!');
+            }, function(err) {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy link.');
+            });
+        });
+    </script>
+</body>
+</html>
