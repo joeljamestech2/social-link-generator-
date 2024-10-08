@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>link generator by joel tech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black; /* Black bars on top and bottom */
+      color: black; /* Black text color */
+      font-weight: bold; /* Bold font */
+    }
+
+    .content-wrapper {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .background-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: auto;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    .btn {
+      --color: black; /* Text color inside button */
+      --color2: white; /* Hover text color */
+      width: 200px;
+      padding: 0.8em 1.75em;
+      background-color: orange;
+      border-radius: 6px;
+      border: .3px solid var(--color);
+      transition: .5s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 1;
+      font-weight: bold; /* Bold text inside button */
+      font-size: 17px;
+      font-family: 'Roboto', 'Segoe UI', sans-serif;
+      text-transform: uppercase;
+      color: var(--color);
+      margin-bottom: 24px;
+    }
+
+    .btn::after, .btn::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      transform: skew(90deg) translate(-50%, -50%);
+      position: absolute;
+      inset: 50%;
+      left: 25%;
+      z-index: -1;
+      transition: .5s ease-out;
+      background-color: var(--color);
+    }
+
+    .btn::before {
+      top: -50%;
+      left: -25%;
+      transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    .btn:hover::before {
+      transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    .btn:hover::after {
+      transform: skew(45deg) translate(-50%, -50%);
+    }
+
+    .btn:hover {
+      color: var(--color2);
+    }
+
+    .btn:active {
+      filter: brightness(.7);
+      transform: scale(.98);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content-wrapper">
+    <img src="" alt="Background Image" class="background-image">
+    <div>
+      <button onclick="window.open(`/whats`)" class="btn">Whatsapp link generator</button>
+      <button onclick="window.open(`/facebook`)" class="btn">facebook link generator</button>
+      <button onclick="window.open(`https://github.com/Leonardtech868/LEONARD-MD`)" class="btn">Instagram link generator>
+      <button onclick="window.open(`https://wa.link/dfa6wg`)" class="btn">Dev 1</button>
+       <button onclick="window.open(`https://wa.link/i5vjax`)" class="btn">dev 2</button>
+      <button onclick="window.open(`https://whatsapp.com/channel/0029VakLfckBlHpYVxryFJ14`)" class="btn">Wa Channel</button>
+      <button onclick="window.open(`https://chat.whatsapp.com/J54tT9uXXO81QLARCr7qQK`)" class="btn">Wa group</button>
+    </div>
+  </div>
+
+</body>
+</html>
