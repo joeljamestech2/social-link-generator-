@@ -14,7 +14,7 @@ res.sendFile(__path + '/joel/Whatsapp.html')
 app.use('/facebook',async (req, res, next) => {
 res.sendFile(__path + '/joel/facebook.html')
 })
-app.use('/joel',async (req, res, next) => {
+app.use('/joe',async (req, res, next) => {
 res.sendFile(__path + '/joel/joel.html')
 })
 app.use('/tiktok',async (req, res, next) => {
